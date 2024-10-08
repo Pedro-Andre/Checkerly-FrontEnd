@@ -1,0 +1,32 @@
+svg #arm {
+  animation: move-arm 1.5s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+svg #orb-1,
+#orb-2,
+#orb-3,
+#orb-4 {
+  animation: move-orbs 1.5s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+svg #orb-2 {
+  animation-delay: -4s;
+}
+
+svg #orb-3 {
+  animation-delay: -9s;
+}
+
+@keyframes move-arm {
+  to {
+    transform: translateX(-0.5rem);
+  }
+}
+
+@keyframes move-orbs {
+  to {
+    transform: translateY(-1rem);
+  }
+}

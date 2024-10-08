@@ -1,0 +1,156 @@
+.user-texts {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 4rem;
+  padding: 4rem;
+  width: 100%;
+}
+
+.user-texts p {
+  font-size: 2.6rem;
+}
+
+.user-texts span {
+  font-size: 2rem;
+  color: var(--clr-gray);
+}
+
+/* TABLE CSS */
+.event-list .events-title span {
+  color: var(--clr-gray);
+  font-weight: 300;
+}
+
+.event-list .svg-list {
+  height: 70rem;
+}
+
+.event-list table {
+  width: 100%;
+  text-align: center;
+  padding: 0 1.6rem 1rem 1.6rem;
+  border-spacing: 0 2rem;
+}
+
+/* TABLE BUTTONS */
+.event-list .event-list-btn {
+  width: 25%;
+  padding-inline: 1rem;
+}
+
+.event-list .event-list-btn a + a {
+  margin-left: 2rem;
+}
+
+/* TABLE HEAD */
+.event-list table th {
+  font-weight: 400;
+  background: var(--clr-black-100);
+  box-shadow: 0 2rem 0 var(--clr-black-100);
+  padding: 1rem 0.5rem 0 0.5rem;
+  border-left: 0.2rem solid var(--clr-black);
+}
+
+.event-list table tr {
+  width: 100%;
+  background: var(--clr-black);
+}
+
+.event-list table td {
+  border-left: 0.2rem solid var(--clr-black-100);
+  height: 8rem;
+}
+
+/* BORDER RADIUS */
+.event-list table td:first-child {
+  border-radius: 0 0 0 2rem;
+}
+
+.event-list table td:last-child {
+  border-radius: 0 0 2rem 0;
+}
+
+.event-list table th:first-child {
+  border-radius: 2rem 0 0 0;
+}
+
+.event-list table th:last-child {
+  border-radius: 0 2rem 0 0;
+}
+
+.scroll-container {
+  height: 68rem;
+  width: 100%;
+  position: relative;
+}
+
+.scroll-container-wrapper {
+  overflow-y: scroll;
+  overflow-x: scroll;
+  height: 68rem;
+  width: 100%;
+}
+.event-list table .event-list-btn-2 {
+  min-width: 30rem;
+}
+
+.event-list table .list-name,
+.event-list table .list-email,
+.event-list table .event-list-btn-2 {
+  min-width: 30rem;
+}
+
+.event-list table .list-date {
+  min-width: 13rem;
+}
+
+.event-list table .list-local {
+  min-width: 20rem;
+}
+
+@media (max-width: 960px) {
+  .scroll-container {
+    width: 150%;
+  }
+
+  .event-list table .list-name,
+  .event-list table .list-email,
+  .event-list table .event-list-btn-2 {
+    min-width: 30rem;
+  }
+
+  .event-list table .list-local {
+    min-width: 20rem;
+  }
+
+  .event-list table .event-list-btn {
+    min-width: 20rem;
+    max-width: 20rem;
+  }
+}
+
+@media (max-width: 780px) {
+  .event-list table .event-list-btn-2 {
+    min-width: 30rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .event-list table {
+    zoom: 85%;
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 415px) {
+  .user-texts p {
+    font-size: 2.25rem;
+  }
+
+  .user-texts span {
+    font-size: 1.7rem;
+    color: var(--clr-gray);
+  }
+}

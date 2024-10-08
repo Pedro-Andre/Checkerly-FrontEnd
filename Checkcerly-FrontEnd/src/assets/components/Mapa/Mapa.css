@@ -1,0 +1,8 @@
+#map {
+  width: 100%;
+  max-width: 127rem;
+  height: 50rem;
+  background: var(--clr-black);
+  border: 0.15rem solid var(--clr-black-300);
+  border-radius: 2rem;
+}

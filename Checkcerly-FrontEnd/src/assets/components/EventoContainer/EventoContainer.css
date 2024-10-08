@@ -1,0 +1,45 @@
+.container {
+  margin-top: 15rem;
+  width: 100%;
+  position: relative;
+}
+
+.container .container-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.date-inputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  width: 100%;
+  gap: 3rem 2rem;
+  max-width: 85rem;
+}
+
+.container .body-btn {
+  margin-top: 6rem;
+}
+
+.event-section {
+  margin-bottom: 15rem;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  opacity: 0.6;
+  filter: invert(1);
+  margin-right: 3rem;
+  border-radius: 1rem;
+  border: 0.1rem solid var(--clr-gray);
+  padding-left: calc(80% - 15rem);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover,
+input[type="time"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}

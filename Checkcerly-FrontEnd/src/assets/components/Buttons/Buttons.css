@@ -1,0 +1,92 @@
+/* NAV BUTTON  */
+.body-btn {
+  cursor: pointer;
+  position: relative;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 0.8rem;
+  font-size: 2rem;
+  color: var(--clr-white);
+  font-family: var(--font);
+  background: var(--clr-black);
+  transition: all 0.2s linear;
+}
+
+.body-btn a {
+  background: var(--clr-grad-orange);
+  padding: 0.35rem 0.3rem;
+  border-radius: 1rem;
+}
+
+.body-btn a:hover .btn {
+  background: var(--clr-grad-orange);
+  background: transparent;
+}
+
+/* OTHERs BUTTONS CSS */
+a > .body-btn {
+  cursor: pointer;
+  position: relative;
+  border: none;
+  padding: 1.5rem 3rem;
+  font-size: 2rem;
+  color: var(--clr-white);
+  font-family: var(--font);
+  transition: all 0.2s linear;
+  background: var(--clr-grad-orange);
+  border-radius: 1rem;
+  z-index: 2;
+}
+
+a > .body-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0.35rem 0.3rem;
+  border-radius: 1rem;
+  z-index: -1;
+  transition: all 0.2 linear;
+  background: var(--clr-black);
+  opacity: 1;
+}
+
+a > .body-btn:hover::before {
+  transition: all 0.2s linear;
+  opacity: 0.5;
+  background: transparent;
+}
+
+/* 
+.theme-btn {
+  width: 8rem;
+  height: 4rem;
+  border-radius: 100vw;
+  background: var(--clr-black);
+  border: 0.3rem solid var(--clr-black-300);
+  position: relative;
+  cursor: pointer;
+} */
+/* 
+.moon {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--clr-black-300);
+  padding: 0.3rem;
+  border-radius: 50%;
+} */
+
+.participantes-btn {
+  background: var(--clr-black);
+  cursor: pointer;
+  position: relative;
+  border: 0.1rem solid var(--clr-black-300);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  transition: all 0.3s;
+}
+
+.participantes-btn:hover {
+  border: 0.1rem solid transparent;
+  background: var(--clr-primary);
+}

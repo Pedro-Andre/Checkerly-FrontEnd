@@ -1,0 +1,10 @@
+.footer {
+  width: 100%;
+  min-height: 6rem;
+  position: absolute;
+  bottom: 0;
+  padding: 1rem;
+  text-align: center;
+  font-size: 2rem;
+  color: var(--clr-gray);
+}
