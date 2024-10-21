@@ -6,3 +6,123 @@
   border: 0.15rem solid var(--clr-black-300);
   border-radius: 2rem;
 }
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 19rem;
+}
+
+.leaflet-popup-close-button {
+  font-size: 3rem !important;
+  top: 1rem !important;
+  right: 1rem !important;
+}
+
+.popup-text {
+  width: 120%;
+  line-height: 4rem;
+  font-size: 1.6rem;
+  font-family: var(--font);
+  font-weight: 500;
+  text-align: center;
+}
+
+.remove-button {
+  background: var(--clr-black-100);
+  color: var(--clr-white) !important;
+  font-family: var(--font);
+  border: none;
+  padding: 0.85rem 1rem;
+  margin: -1rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+  border-radius: 0.5rem;
+}
+
+.remove-button:hover {
+  background-color: #8b0000;
+}
+
+.leaflet-control-zoom {
+  top: 20rem;
+}
+
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+  scale: 1.2;
+  margin: 1rem;
+  background: var(--clr-black) !important;
+  color: var(--clr-white) !important;
+}
+
+/* Map serach bar  */
+.leaflet-control-geocoder {
+  background: var(--clr-black) !important;
+  color: var(--clr-white) !important;
+  height: 5rem !important;
+  padding-inline: 0.5rem;
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.leaflet-control-geocoder input {
+  background: #fff !important;
+  height: 4rem !important;
+  border-radius: 1rem !important;
+  color: var(--clr-black) !important;
+}
+
+.leaflet-control-geocoder button {
+  padding: 2rem;
+}
+
+/* bindPopup container */
+.leaflet-popup-content-wrapper {
+  font-size: 1.5rem;
+  color: var(--clr-black) !important;
+  font-family: var(--font);
+  overflow: hidden;
+}
+
+/* lista de busca */
+.leaflet-control-geocoder-alternatives {
+  background: var(--clr-black);
+  position: absolute;
+  top: 5rem;
+  right: 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 1rem 1rem var(--clr-black-shadow);
+  color: var(--clr-white) !important;
+}
+
+.leaflet-control-geocoder-alternatives li {
+  font-size: 1.5rem;
+  font-family: var(--font);
+  transition: all 0.3s;
+}
+
+.leaflet-control-geocoder-alternatives li a {
+  color: var(--clr-white) !important;
+  font-weight: 600;
+}
+
+.leaflet-control-geocoder-alternatives li span {
+  color: #ccc !important;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+/* Estilo ao passar o mouse sobre um item */
+.leaflet-control-geocoder-alternatives li:hover {
+  background: #444 !important;
+}
+
+/* Último item da lista sem borda inferior */
+.leaflet-control-geocoder-alternative:last-child {
+  border-bottom: none;
+}

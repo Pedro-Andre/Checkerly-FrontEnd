@@ -1,25 +1,35 @@
-// import React, { useState } from "react";
+// import { useState } from "react";
 // import "./Geolocation.css";
 
-// const Geolocation: React.FC = () => {
-//   const [componentsVisible, setComponentsVisible] = useState(true); // Controle de visibilidade de todos os componentes
+// interface GeoProps {
+//   localReceived: (latitude: number, longitude: number) => void;
+// }
+
+// const Geolocation: React.FC<GeoProps> = ({ localReceived }) => {
+//   const [componentsVisible, setComponentsVisible] = useState(true);
 
 //   const requestLocation = () => {
 //     if ("geolocation" in navigator) {
 //       navigator.geolocation.getCurrentPosition(
 //         (position) => {
-//           const { latitude, longitude } = position.coords;
+//           const { latitude, longitude, accuracy } = position.coords;
 //           console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+//           console.log(`Precisão: ${accuracy}`);
+//           localReceived(latitude, longitude);
 //         },
 //         (error) => {
 //           console.error("Erro ao obter a localização:", error);
+//         },
+//         {
+//           enableHighAccuracy: true,
+//           timeout: 10000,
+//           maximumAge: 0,
 //         }
 //       );
 //     } else {
 //       console.error("Geolocalização não é suportada pelo navegador");
 //     }
 
-//     // Esconde todos os componentes após solicitar a localização
 //     setComponentsVisible(false);
 //   };
 
@@ -45,31 +55,40 @@
 
 // export default Geolocation;
 
-import React, { useState } from "react";
+// ===================== teste =============== \\
+
+import { useState } from "react";
 import "./Geolocation.css";
 
-interface GeolocationProps {
-  locationReceived: (latitude: number, longitude: number) => void;
+interface GeoProps {
+  localReceived: (latitude: number, longitude: number) => void;
 }
 
-const Geolocation: React.FC<GeolocationProps> = ({ locationReceived }) => {
+const Geolocation: React.FC<GeoProps> = ({ localReceived }) => {
   const [componentsVisible, setComponentsVisible] = useState(true);
 
   const requestLocation = () => {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          const { latitude, longitude } = position.coords;
+          const { latitude, longitude, accuracy } = position.coords;
           console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
-          locationReceived(latitude, longitude);
+          console.log(`Precisão: ${accuracy}`);
+          localReceived(latitude, longitude);
         },
         (error) => {
           console.error("Erro ao obter a localização:", error);
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 10000,
+          maximumAge: 0,
         }
       );
     } else {
       console.error("Geolocalização não é suportada pelo navegador");
     }
+
     setComponentsVisible(false);
   };
 

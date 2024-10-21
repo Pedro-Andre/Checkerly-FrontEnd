@@ -7,7 +7,15 @@
 // import Footer from "../assets/components/Footer/Footer";
 // import "../App.css";
 
-// function Home() {
+// const Home: React.FC = () => {
+//   const [userCoords, setUserCoords] = useState<{
+//     latitude: number;
+//     longitude: number;
+//   } | null>(null);
+
+//   const handleLocationReceived = (latitude: number, longitude: number) => {
+//     setUserCoords({ latitude, longitude });
+//   };
 
 //   return (
 //     <>
@@ -18,7 +26,7 @@
 //       <main>
 //         <section>
 //           <HeroSection />
-//           <Geolocation />
+//           <Geolocation localReceived={handleLocationReceived} />
 //         </section>
 
 //         <section className="cards-section">
@@ -35,11 +43,13 @@
 //       </main>
 //     </>
 //   );
-// }
+// };
 
 // export default Home;
 
-import React, { useState } from "react";
+// ===================== teste =============== \\
+
+import { useState, useEffect } from "react";
 import Geolocation from "../assets/components/Geolocation/Geolocation";
 import Nav from "../assets/components/Nav/Nav";
 import HeroSection from "../assets/components/HeroSection/HeroSection";
@@ -48,14 +58,21 @@ import BottomSection from "../assets/components/BottomSection/BottomSection";
 import Footer from "../assets/components/Footer/Footer";
 import "../App.css";
 
-function Home() {
-  const [location, setLocation] = useState({ lat: 0, lng: 0 });
+const Home: React.FC = () => {
+  const [userCoords, setUserCoords] = useState<{
+    latitude: number;
+    longitude: number;
+  } | null>(null);
 
-  // Função que agora recebe latitude e longitude como parâmetros separados
   const handleLocationReceived = (latitude: number, longitude: number) => {
-    setLocation({ lat: latitude, lng: longitude });
-    console.log("Location received:", { lat: latitude, lng: longitude });
+    setUserCoords({ latitude, longitude });
+    localStorage.setItem("userCoords", JSON.stringify({ latitude, longitude }));
   };
+
+  // limpa o localStorage quando incia a Home
+  useEffect(() => {
+    localStorage.removeItem("userCoords");
+  }, []);
 
   return (
     <>
@@ -66,7 +83,7 @@ function Home() {
       <main>
         <section>
           <HeroSection />
-          <Geolocation locationReceived={handleLocationReceived} />
+          <Geolocation localReceived={handleLocationReceived} />
         </section>
 
         <section className="cards-section">
@@ -83,6 +100,6 @@ function Home() {
       </main>
     </>
   );
-}
+};
 
 export default Home;
