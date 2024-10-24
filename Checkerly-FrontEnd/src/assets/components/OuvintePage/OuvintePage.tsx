@@ -18,7 +18,7 @@ const OuvintePage: React.FC = () => {
     };
     console.log(data);
 
-    fetch("http://localhost:8080/users", {
+    fetch("http://localhost:8080/auth/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -13,6 +13,23 @@
   text-decoration: underline;
 }
 
+#login-form {
+  position: relative;
+}
+
+#login-form button {
+  margin-top: 10rem;
+}
+
+#login-form p.error-message {
+  text-align: center;
+  bottom: 19rem;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  font-size: 1.3rem;
+}
+
 @media (max-width: 475px) {
   .nova-senha {
     font-size: 1.65rem;

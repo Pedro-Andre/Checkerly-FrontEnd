@@ -203,6 +203,10 @@ const EventoContainer: React.FC = () => {
   const [eventoInicio, setEventoInicio] = useState<string>("");
   const [eventoFim, setEventoFim] = useState<string>("");
   const [eventoHora, setEventoHora] = useState<string>("");
+  const [selectedCoords, setSelectedCoords] = useState<{
+    lat: number;
+    lng: number;
+  } | null>(null);
 
   const [userCoords, setUserCoords] = useState<{
     latitude: number;
@@ -216,6 +220,10 @@ const EventoContainer: React.FC = () => {
     if (storedCoords) setUserCoords(JSON.parse(storedCoords));
   }, []);
 
+  const handleMarkerAdd = (lat: number, lng: number) => {
+    setSelectedCoords({ lat, lng });
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -226,9 +234,11 @@ const EventoContainer: React.FC = () => {
       dataInicio: eventoInicio,
       dataFim: eventoFim,
       horaEvento: eventoHora,
+      latitude: selectedCoords?.lat,
+      longitude: selectedCoords?.lng,
     };
 
-    fetch("http://localhost:8080/events", {
+    fetch("http://localhost:8080/auth/events", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -318,19 +328,11 @@ const EventoContainer: React.FC = () => {
             </label>
             <label htmlFor="event-local">
               Local do Evento
-              {/* <input
-                // required
-                // type="text"
-                // name="local"
-                id="event-local"
-                placeholder="Local do evento"
-                value={eventoLocal}
-                onChange={(e) => setEventoLocal(e.target.value)}
-              /> */}
               {userCoords && (
                 <Mapa
                   latitude={userCoords.latitude}
                   longitude={userCoords.longitude}
+                  onMarkerAdd={handleMarkerAdd}
                 />
               )}
             </label>

@@ -16,9 +16,9 @@ const OrganizadorPage: React.FC = () => {
       senha: organizadorPass,
       celular: organizadorTel,
     };
-    console.log(data);
+    // console.log(data);
 
-    fetch("http://localhost:8080/organizers", {
+    fetch("http://localhost:8080/auth/organizers", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,7 +32,7 @@ const OrganizadorPage: React.FC = () => {
         console.log("Dados recebidos:", data);
         try {
           const jsonData = JSON.stringify(data);
-          console.log(jsonData);
+          // console.log(jsonData);
         } catch (err) {
           console.log("Erros no parse JSON:", err);
         }
