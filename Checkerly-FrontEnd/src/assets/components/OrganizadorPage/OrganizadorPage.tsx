@@ -16,7 +16,6 @@ const OrganizadorPage: React.FC = () => {
       senha: organizadorPass,
       celular: organizadorTel,
     };
-    // console.log(data);
 
     fetch("http://localhost:8080/auth/organizers", {
       method: "POST",

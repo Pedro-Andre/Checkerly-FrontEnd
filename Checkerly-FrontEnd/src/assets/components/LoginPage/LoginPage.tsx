@@ -354,8 +354,10 @@ const LoginPage: React.FC = () => {
       });
 
       if (!response.ok) {
-        const errorText = await response.text();
-        setErrorMessage(`Login falhou: ${errorText}`);
+        const errorText = await response.json();
+        setErrorMessage(
+          `Login falhou: ${errorText.message || "Credenciais inválidas"}`
+        );
         return;
       }
 
