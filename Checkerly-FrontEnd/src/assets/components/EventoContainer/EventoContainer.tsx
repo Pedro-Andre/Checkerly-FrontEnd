@@ -1,5 +1,6 @@
 import "./EventoContainer.css";
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import CreateEventBtn from "../Buttons/CreateEventBtn";
 import Mapa from "../Mapa/Mapa";
 
@@ -14,6 +15,7 @@ const EventoContainer: React.FC = () => {
     lat: number;
     lng: number;
   } | null>(null);
+  const navigate = useNavigate();
 
   const [userCoords, setUserCoords] = useState<{
     latitude: number;
@@ -45,7 +47,7 @@ const EventoContainer: React.FC = () => {
       longitude: selectedCoords?.lng,
     };
 
-    fetch("http://localhost:8080/auth/events", {
+    fetch("http://localhost:8080/auth/register/event", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -54,15 +56,15 @@ const EventoContainer: React.FC = () => {
       },
       body: JSON.stringify(data),
     })
-      .then((res) => console.log("Status da resposta:", res.status))
-      .then((data) => {
-        console.log("Dados recebidos: ", data);
-        try {
-          const jsonData = JSON.stringify(data);
-          console.log(jsonData);
-        } catch (err) {
-          console.log("Erros no parse JSON:", err);
+      .then((res) => {
+        console.log("Status da resposta: ", res.status);
+        if (res.ok) {
+          navigate("/criar-evento/evento-criado");
         }
+        console.log("Dados:", data);
+      })
+      .catch((err) => {
+        console.error("Erro no parse JSON:", err);
       });
 
     // reset input values

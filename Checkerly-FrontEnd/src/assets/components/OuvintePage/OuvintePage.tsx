@@ -16,9 +16,8 @@ const OuvintePage: React.FC = () => {
       senha: ouvintePass,
       celular: ouvinteTel,
     };
-    console.log(data);
 
-    fetch("http://localhost:8080/auth/users", {
+    fetch("http://localhost:8080/auth/register/user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -26,17 +25,14 @@ const OuvintePage: React.FC = () => {
         "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify(data),
-    })
-      .then((res) => console.log("Status da resposta:", res.status))
-      .then((data) => {
-        console.log("Dados recebidos:", data);
-        try {
-          const jsonData = JSON.stringify(data);
-          console.log(jsonData);
-        } catch (err) {
-          console.error("Erro no parse JSON:", err);
-        }
-      });
+    }).then((res) => {
+      console.log(`Status da resposta: ${res.status}`);
+      try {
+        console.log("Dados:", data);
+      } catch (err) {
+        console.error("Erro no parse JSON:", err);
+      }
+    });
 
     // reset input values
     setOuvinteName("");

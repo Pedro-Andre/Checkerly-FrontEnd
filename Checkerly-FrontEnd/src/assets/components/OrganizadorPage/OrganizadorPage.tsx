@@ -17,7 +17,7 @@ const OrganizadorPage: React.FC = () => {
       celular: organizadorTel,
     };
 
-    fetch("http://localhost:8080/auth/organizers", {
+    fetch("http://localhost:8080/auth/register/organizer", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -25,17 +25,14 @@ const OrganizadorPage: React.FC = () => {
         "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify(data),
-    })
-      .then((res) => console.log("Status da resposta:", res.status))
-      .then((data) => {
-        console.log("Dados recebidos:", data);
-        try {
-          const jsonData = JSON.stringify(data);
-          // console.log(jsonData);
-        } catch (err) {
-          console.log("Erros no parse JSON:", err);
-        }
-      });
+    }).then((res) => {
+      console.log(`Status da resposta: ${res.status}`);
+      try {
+        console.log("Dados:", data);
+      } catch (err) {
+        console.error("Erro no parse JSON:", err);
+      }
+    });
 
     // reset input values
     setOrganizadorName("");

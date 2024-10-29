@@ -1,11 +1,36 @@
+// import { Link } from "react-router-dom";
+
+// function QrdCodeBtn() {
+//   return (
+//     <Link to="/evento-criado/qr-code">
+//       <button className="body-btn">Criar QR-Code</button>
+//     </Link>
+//   );
+// }
+
+// export default QrdCodeBtn;
+
+// ========== //
+
 import { Link } from "react-router-dom";
 
-function QrdCodeBtn() {
+interface QrdCodeBtnProps {
+  eventInfo: {
+    id: string;
+  };
+}
+
+const QrdCodeBtn: React.FC<QrdCodeBtnProps> = ({ eventInfo }) => {
   return (
-    <Link to="/evento-criado/qr-code">
+    <Link
+      to={{
+        pathname: "/evento-criado/qr-code",
+      }}
+      state={{ eventInfo }}
+    >
       <button className="body-btn">Criar QR-Code</button>
     </Link>
   );
-}
+};
 
 export default QrdCodeBtn;

@@ -1,0 +1,27 @@
+.qr-code {
+  background-color: #fff;
+}
+
+.qr-code-container {
+  text-align: center;
+  margin-top: 13rem;
+}
+
+.qr-code-container h1 {
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 3.5rem;
+}
+
+.qr-code-container p {
+  margin-top: 1rem;
+}
+
+.qr-code {
+  margin-top: 5rem;
+  padding: 0.75rem;
+  border-radius: 1rem;
+  width: 100%;
+  height: auto;
+  max-width: 36.4rem;
+}
