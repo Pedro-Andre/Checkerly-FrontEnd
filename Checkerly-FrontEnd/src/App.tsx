@@ -11,6 +11,7 @@ import EventoCriado from "./pages/EventoCriado";
 import Perfil from "./pages/Perfil";
 import ListaParticipantes from "./pages/ListaParticipantes";
 import QrCodePage from "./assets/components/QrCodePage/QrCodePage";
+import ErroLocation from "./assets/components/ErroLocation/ErroLocation";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
             path="/criar-evento/evento-criado"
             element={<Perfil />}
           ></Route>
+          <Route path="/erro-localizacao" element={<ErroLocation />}></Route>
           <Route path="/evento-criado/qr-code" element={<QrCodePage />}></Route>
           <Route path="*" element={<Home />}></Route>
         </Routes>

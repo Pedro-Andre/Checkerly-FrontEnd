@@ -153,6 +153,8 @@ function Mapa({ latitude, longitude, onMarkerAdd }: MapaProps) {
   const mapRef = useRef<HTMLDivElement | null>(null);
   const mapInstanceRef = useRef<L.Map | null>(null);
 
+  markers;
+
   useEffect(() => {
     if (latitude && longitude) {
       setUserCoords({ latitude, longitude });

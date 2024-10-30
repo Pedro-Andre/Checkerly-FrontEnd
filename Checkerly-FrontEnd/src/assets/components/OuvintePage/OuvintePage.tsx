@@ -13,7 +13,7 @@ const OuvintePage: React.FC = () => {
     const data = {
       name: ouvinteName,
       email: ouvinteEmail,
-      senha: ouvintePass,
+      password: ouvintePass,
       celular: ouvinteTel,
     };
 
@@ -22,7 +22,6 @@ const OuvintePage: React.FC = () => {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-        "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify(data),
     }).then((res) => {

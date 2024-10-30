@@ -13,7 +13,7 @@ const OrganizadorPage: React.FC = () => {
     const data = {
       name: organizadorName,
       email: organizadorEmail,
-      senha: organizadorPass,
+      password: organizadorPass,
       celular: organizadorTel,
     };
 
@@ -22,7 +22,6 @@ const OrganizadorPage: React.FC = () => {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-        "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify(data),
     }).then((res) => {
