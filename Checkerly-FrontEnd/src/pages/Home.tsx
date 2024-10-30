@@ -64,12 +64,12 @@ const Home: React.FC = () => {
     longitude: number;
   } | null>(null);
 
+  userCoords;
   const handleLocationReceived = (latitude: number, longitude: number) => {
     setUserCoords({ latitude, longitude });
     localStorage.setItem("userCoords", JSON.stringify({ latitude, longitude }));
   };
 
-  // limpa o localStorage quando incia a Home
   useEffect(() => {
     localStorage.removeItem("userCoords");
   }, []);
