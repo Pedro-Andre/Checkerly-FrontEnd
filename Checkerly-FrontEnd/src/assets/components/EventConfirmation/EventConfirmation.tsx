@@ -55,7 +55,7 @@ const EventConfirmation = () => {
       setCount((prevCount) => prevCount - 1);
     }, 1000);
 
-    return () => clearInterval(intervalId); // Limpeza do intervalo ao desmontar
+    return () => clearInterval(intervalId);
   }, []);
 
   useEffect(() => {
