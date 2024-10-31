@@ -5,6 +5,7 @@ import CreateEventBtn from "../Buttons/CreateEventBtn";
 import Mapa from "../Mapa/Mapa";
 
 const EventoContainer: React.FC = () => {
+  const [eventoId, setEventoId] = useState<string>("");
   const [eventoName, setEventoName] = useState<string>("");
   const [eventoAssunto, setEventoAssunto] = useState<string>("");
   const [eventoLocal, setEventoLocal] = useState<string>("");
@@ -37,6 +38,7 @@ const EventoContainer: React.FC = () => {
     e.preventDefault();
 
     const data = {
+      id: eventoId,
       nomeEvento: eventoName,
       assuntoEvento: eventoAssunto,
       localEvento: eventoLocal,
@@ -74,6 +76,7 @@ const EventoContainer: React.FC = () => {
     setEventoInicio("");
     setEventoFim("");
     setEventoHora("");
+    setEventoId("");
   };
 
   return (

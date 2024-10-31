@@ -1,0 +1,25 @@
+.about-text {
+  margin-top: 15rem;
+  text-align: center;
+}
+
+.about-text span {
+  font-size: 3rem;
+  color: var(--clr-primary);
+  background-image: var(--clr-grad-orange);
+  background-clip: text;
+  font-weight: 500;
+  color: transparent;
+  animation: gradient 2s linear infinite alternate;
+  -webkit-background-clip: text;
+}
+
+.about-text p {
+  font-size: 2rem;
+  font-weight: 300;
+  text-align: justify;
+  line-height: 150%;
+  margin-block: 3rem;
+  width: 100%;
+  padding-inline: 2.5rem;
+}

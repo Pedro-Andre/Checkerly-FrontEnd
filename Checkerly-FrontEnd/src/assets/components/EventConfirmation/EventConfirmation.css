@@ -1,0 +1,17 @@
+.confirmation {
+  margin-top: 15rem;
+  border-radius: 0.8rem;
+}
+
+.confirmation h3 {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+.confirmation p {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-top: 3rem;
+}

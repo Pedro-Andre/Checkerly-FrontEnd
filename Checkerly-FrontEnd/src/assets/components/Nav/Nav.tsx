@@ -1,9 +1,7 @@
 import "./Nav.css";
 import LoginBtn from "../Buttons/LoginBtn";
-// import ThemeBtn from "../Buttons/ThemeBtn";
 import Logo from "../imgs/Logo";
 import { useEffect } from "react";
-// import { Link } from "react-router-dom";
 
 function Nav() {
   // nav mobile function
@@ -27,10 +25,10 @@ function Nav() {
             <a href={"/home"}>Home</a>
             <a href={"/criar-evento"}>Criar Evento</a>
             <a href={"/lista-participantes"}>Lista de Participantes</a>
+            <a href={"/sobre"}>Sobre</a>
           </div>
           <div className="nav-btns">
             <LoginBtn />
-            {/* <ThemeBtn/ > */}
           </div>
         </nav>
       </div>

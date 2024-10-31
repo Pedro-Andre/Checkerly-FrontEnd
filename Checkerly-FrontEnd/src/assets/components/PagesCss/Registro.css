@@ -38,7 +38,6 @@ main button {
   display: block;
   max-width: 60rem;
   padding-left: 4rem;
-  /* border: 0.1rem solid #0f0; */
 }
 
 .event-img-container a {

@@ -10,17 +10,6 @@ function EventoCriado() {
     id: "12345",
   };
 
-  // const response = await fetch('URL_DO_BACKEND', {
-  //   method: 'POST',
-  //   headers: {
-  //     'Authorization': `Bearer ${token}`, // Inclui o token no cabeçalho
-  //     'Content-Type': 'application/json'
-  //   },
-  //   body: JSON.stringify({/* payload se necessário */})
-  // });
-
-  console.log(eventInfo);
-
   return (
     <>
       <header>

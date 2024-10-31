@@ -5,6 +5,7 @@ const OrganizadorEvento: React.FC = () => {
   let orgNameInp = document.getElementById(
     "organizador-name"
   ) as HTMLInputElement;
+
   let orgDiscInp = document.getElementById(
     "organizador-email"
   ) as HTMLInputElement;

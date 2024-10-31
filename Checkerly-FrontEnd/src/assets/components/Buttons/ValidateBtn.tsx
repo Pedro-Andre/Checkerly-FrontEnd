@@ -1,11 +1,11 @@
-function SendEmail() {
+function ValidateBtn() {
   return (
     <a>
       <button className="body-btn" type="submit">
-        Confirmar email
+        Criar Evento
       </button>
     </a>
   );
 }
 
-export default SendEmail;
+export default ValidateBtn;

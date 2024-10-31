@@ -71,7 +71,6 @@
   max-width: 27%;
 }
 
-/* !!! TABLE RESPONSIVE CSS ON "Perfil.CSS !!! */
 @media (max-width: 575px) {
   .texts-container {
     text-align: center;
