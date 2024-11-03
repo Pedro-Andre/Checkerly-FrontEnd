@@ -226,7 +226,7 @@ function PerfilPage() {
         const response = await axios.get(url);
         setUserInfo(response.data.user);
         setUserEvents(response.data.events || []);
-        console.log(userId);
+        // console.log(userId);
       } catch (error) {
         console.error("Erro ao buscar dados do usuário:", error);
       }

@@ -3,9 +3,9 @@
   text-align: center;
   display: block;
   font-size: 2rem;
-  padding-top: 3rem;
   transition: all 0.3s;
   cursor: pointer;
+  margin-top: 4.5rem;
 }
 
 .nova-senha:hover {
@@ -17,17 +17,15 @@
   position: relative;
 }
 
-#login-form button {
-  margin-top: 10rem;
-}
-
-#login-form p.error-message {
+.error-message {
   text-align: center;
-  bottom: 19rem;
+  bottom: 15rem;
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
+  color: var(--clr-primary);
+  font-weight: 500;
 }
 
 @media (max-width: 475px) {
