@@ -1,10 +1,10 @@
-import "./EventoContainer.css";
+import "./EventContainer.css";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import CreateEventBtn from "../Buttons/CreateEventBtn";
-import Mapa from "../Mapa/Mapa";
+import Map from "../Map/Map";
 
-const EventoContainer: React.FC = () => {
+const EventContainer: React.FC = () => {
   const [eventoId, setEventoId] = useState<string>("");
   const [eventoName, setEventoName] = useState<string>("");
   const [eventoAssunto, setEventoAssunto] = useState<string>("");
@@ -141,7 +141,7 @@ const EventoContainer: React.FC = () => {
             <label htmlFor="event-local">
               Local do Evento
               {userCoords && (
-                <Mapa
+                <Map
                   latitude={userCoords.latitude}
                   longitude={userCoords.longitude}
                   onMarkerAdd={handleMarkerAdd}
@@ -194,4 +194,4 @@ const EventoContainer: React.FC = () => {
   );
 };
 
-export default EventoContainer;
+export default EventContainer;

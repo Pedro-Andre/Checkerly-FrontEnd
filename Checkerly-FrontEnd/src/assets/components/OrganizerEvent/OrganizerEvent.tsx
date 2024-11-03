@@ -1,18 +1,7 @@
 import { useState } from "react";
-import "./OrganizadorEvento.css";
+import "./OrganizerEvent.css";
 
-const OrganizadorEvento: React.FC = () => {
-  let orgNameInp = document.getElementById(
-    "organizador-name"
-  ) as HTMLInputElement;
-
-  let orgDiscInp = document.getElementById(
-    "organizador-email"
-  ) as HTMLInputElement;
-  let orgEmailInp = document.getElementById(
-    "organizador-email"
-  ) as HTMLInputElement;
-
+const OrganizerEvent: React.FC = () => {
   const [organizadorName, setOrganizadorName] = useState<string>("");
   const [organizadorDisc, setOrganizadorDisc] = useState<string>("");
   const [organizadorEmail, setOrganizadorEmail] = useState<string>("");
@@ -21,24 +10,20 @@ const OrganizadorEvento: React.FC = () => {
     e.preventDefault();
 
     const data = {
-      organizadorName,
-      organizadorDisc,
-      organizadorEmail,
+      nome: organizadorName,
+      disciplina: organizadorDisc,
+      email: organizadorEmail,
     };
     console.log(data);
 
-    fetch("http://localhost:8080/events", {
+    fetch("http://localhost:8080/auth/register/event", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
         "Access-Control-Allow-Origin": "*",
       },
-      body: JSON.stringify({
-        nome: orgNameInp,
-        disciplina: orgDiscInp,
-        email: orgEmailInp,
-      }),
+      body: JSON.stringify(data),
     })
       .then((res) => console.log("Status da resposta:", res.status))
       .then((data) => {
@@ -52,9 +37,9 @@ const OrganizadorEvento: React.FC = () => {
       });
 
     // reset input values
-    orgNameInp.value = "";
-    orgDiscInp.value = "";
-    orgEmailInp.value = "";
+    setOrganizadorName("");
+    setOrganizadorDisc("");
+    setOrganizadorEmail("");
   };
 
   return (
@@ -135,4 +120,4 @@ const OrganizadorEvento: React.FC = () => {
   );
 };
 
-export default OrganizadorEvento;
+export default OrganizerEvent;

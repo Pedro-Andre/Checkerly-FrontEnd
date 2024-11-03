@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CreateAcc from "../Buttons/CreateAccBtn";
 
-const OuvintePage: React.FC = () => {
+const UserPage: React.FC = () => {
   const [ouvinteName, setOuvinteName] = useState<string>("");
   const [ouvinteEmail, setOuvinteEmail] = useState<string>("");
   const [ouvintePass, setOuvintePass] = useState<string>("");
@@ -133,4 +133,4 @@ const OuvintePage: React.FC = () => {
   );
 };
 
-export default OuvintePage;
+export default UserPage;

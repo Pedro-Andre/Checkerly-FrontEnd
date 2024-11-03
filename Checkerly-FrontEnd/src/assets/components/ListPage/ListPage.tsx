@@ -1,8 +1,8 @@
 import EventQrCodeBtn from "../Buttons/EventQrCodeBtn";
 // import ParticipantsBtn from "../Buttons/ParticipantsBtn";
-import "./ListaPage.css";
+import "./ListPage.css";
 
-function ListaPage() {
+function ListPage() {
   return (
     <>
       <div className="texts-container">
@@ -175,4 +175,4 @@ function ListaPage() {
   );
 }
 
-export default ListaPage;
+export default ListPage;

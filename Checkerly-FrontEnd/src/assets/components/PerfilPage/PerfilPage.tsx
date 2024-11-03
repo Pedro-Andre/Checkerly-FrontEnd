@@ -184,7 +184,7 @@
 
 // ====== //
 
-import "./Perfil.css";
+import "./PerfilPage.css";
 import { useState, useEffect } from "react";
 import ParticipantsBtn from "../Buttons/ParticipantsBtn";
 import EventQrCodeBtn from "../Buttons/EventQrCodeBtn";

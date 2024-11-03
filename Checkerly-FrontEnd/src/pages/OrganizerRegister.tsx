@@ -1,9 +1,9 @@
 import Nav from "../assets/components/Nav/Nav";
 import "../assets/components/PagesCss/Registro.css";
-import OrganizadorPage from "../assets/components/OrganizadorPage/OrganizadorPage";
+import OrganizerPage from "../assets/components/OrganizerPage/OrganizerPage";
 import Footer from "../assets/components/Footer/Footer";
 
-function RegistroOrganizador() {
+function OrganizerRegister() {
   return (
     <>
       <header>
@@ -12,7 +12,7 @@ function RegistroOrganizador() {
 
       <main>
         <section>
-          <OrganizadorPage />
+          <OrganizerPage />
         </section>
 
         <footer>
@@ -23,4 +23,4 @@ function RegistroOrganizador() {
   );
 }
 
-export default RegistroOrganizador;
+export default OrganizerRegister;

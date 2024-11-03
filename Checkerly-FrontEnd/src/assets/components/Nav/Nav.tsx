@@ -41,6 +41,7 @@ function Nav() {
             <a href={"/home"}>Home</a>
             <a href={"/criar-evento"}>Criar Evento</a>
             <a href={"/lista-participantes"}>Lista de Participantes</a>
+            <a href={"/sobre"}>Sobre</a>
           </div>
           <LoginBtn />
         </nav>

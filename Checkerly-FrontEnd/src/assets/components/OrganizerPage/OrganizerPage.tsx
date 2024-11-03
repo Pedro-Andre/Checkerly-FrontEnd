@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CreateAcc from "../Buttons/CreateAccBtn";
 
-const OrganizadorPage: React.FC = () => {
+const OrganizerPage: React.FC = () => {
   const [organizadorName, setOrganizadorName] = useState<string>("");
   const [organizadorEmail, setOrganizadorEmail] = useState<string>("");
   const [organizadorPass, setOrganizadorPass] = useState<string>("");
@@ -133,4 +133,4 @@ const OrganizadorPage: React.FC = () => {
   );
 };
 
-export default OrganizadorPage;
+export default OrganizerPage;

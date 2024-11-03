@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
-import "../OrganizadorEvento/OrganizadorEvento.css";
+import "../OrganizerEvent/OrganizerEvent.css";
 import CreateEventBtn from "../Buttons/CreateEventBtn2";
 
 const ValidateQrCode = () => {

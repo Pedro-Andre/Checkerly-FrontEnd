@@ -2,7 +2,7 @@ import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
 import HomeBtn from "../Buttons/HomeBtn";
 
-function ErroLocation() {
+function ErrorLocation() {
   return (
     <>
       <header>
@@ -37,4 +37,4 @@ function ErroLocation() {
   );
 }
 
-export default ErroLocation;
+export default ErrorLocation;

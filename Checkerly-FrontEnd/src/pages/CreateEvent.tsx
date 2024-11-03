@@ -1,9 +1,9 @@
 import Nav from "../assets/components/Nav/Nav";
-import OrganizadorEvento from "../assets/components/OrganizadorEvento/OrganizadorEvento";
-import EventoContainer from "../assets/components/EventoContainer/EventoContainer";
+import OrganizadorEvento from "../assets/components/OrganizerEvent/OrganizerEvent";
+import EventContainer from "../assets/components/EventContainer/EventoContainer";
 import Footer from "../assets/components/Footer/Footer";
 
-function CriarEvento() {
+function CreateEvent() {
   return (
     <>
       <header>
@@ -13,7 +13,7 @@ function CriarEvento() {
       <main>
         <section className="event-section">
           <OrganizadorEvento />
-          <EventoContainer />
+          <EventContainer />
         </section>
 
         <footer>
@@ -24,4 +24,4 @@ function CriarEvento() {
   );
 }
 
-export default CriarEvento;
+export default CreateEvent;

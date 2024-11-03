@@ -4,7 +4,7 @@ import EventImg from "../assets/components/imgs/EventImg";
 import Nav from "../assets/components/Nav/Nav";
 import "../assets/components/PagesCss/Registro.css";
 
-function EventoCriado() {
+function EventCreated() {
   return (
     <>
       <header>
@@ -23,4 +23,4 @@ function EventoCriado() {
   );
 }
 
-export default EventoCriado;
+export default EventCreated;

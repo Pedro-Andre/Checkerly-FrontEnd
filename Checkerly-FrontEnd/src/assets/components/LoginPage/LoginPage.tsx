@@ -16,6 +16,7 @@ const LoginPage: React.FC = () => {
       email: loginEmail,
       password: loginPass,
     };
+    console.log(data);
 
     try {
       const response = await fetch("http://localhost:8080/auth/login", {

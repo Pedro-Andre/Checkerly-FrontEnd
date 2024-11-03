@@ -1,9 +1,9 @@
-import OuvintePage from "../assets/components/OuvintePage/OuvintePage";
+import UserPage from "../assets/components/UserPage/UserPage";
 import Nav from "../assets/components/Nav/Nav";
 import "../assets/components/PagesCss/Registro.css";
 import Footer from "../assets/components/Footer/Footer";
 
-function RegistroOuvinte() {
+function UserRegister() {
   return (
     <>
       <header>
@@ -12,7 +12,7 @@ function RegistroOuvinte() {
 
       <main>
         <section>
-          <OuvintePage />
+          <UserPage />
         </section>
 
         <footer>
@@ -23,4 +23,4 @@ function RegistroOuvinte() {
   );
 }
 
-export default RegistroOuvinte;
+export default UserRegister;

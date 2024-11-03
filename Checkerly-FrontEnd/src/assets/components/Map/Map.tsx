@@ -1,17 +1,17 @@
 import { useEffect, useRef, useState } from "react";
-import "./Mapa.css";
+import "./Map.css";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "leaflet-control-geocoder";
 import "leaflet-control-geocoder/dist/Control.Geocoder.css";
 
-interface MapaProps {
+interface MapProps {
   latitude: number;
   longitude: number;
   onMarkerAdd: (lat: number, lng: number) => void;
 }
 
-function Mapa({ latitude, longitude, onMarkerAdd }: MapaProps) {
+function Map({ latitude, longitude, onMarkerAdd }: MapProps) {
   const [userCoords, setUserCoords] = useState<{
     latitude: number;
     longitude: number;
@@ -134,4 +134,4 @@ function Mapa({ latitude, longitude, onMarkerAdd }: MapaProps) {
   );
 }
 
-export default Mapa;
+export default Map;

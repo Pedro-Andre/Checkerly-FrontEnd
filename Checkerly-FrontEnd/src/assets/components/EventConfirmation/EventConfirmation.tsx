@@ -5,21 +5,21 @@
 
 // const EventConfirmation = () => {
 //   const navigate = useNavigate();
-//   setTimeout(() => {
-//     navigate("/home");
-//   }, 4500);
-
-//   const [count, setCount] = useState(4);
+//   const [count, setCount] = useState(12);
 
 //   useEffect(() => {
 //     const intervalId = setInterval(() => {
-//       setCount((prevCount) => prevCount - 1); // Decrementa o count a cada segundo
+//       setCount((prevCount) => prevCount - 1);
 //     }, 1000);
 
-//     if (count === 0) {
-//       return () => clearInterval(intervalId);
-//     }
+//     return () => clearInterval(intervalId);
 //   }, []);
+
+//   useEffect(() => {
+//     if (count === 0) {
+//       navigate("/home");
+//     }
+//   }, [count, navigate]);
 
 //   return (
 //     <>
@@ -39,31 +39,13 @@
 
 // export default EventConfirmation;
 
-// ========== \\
+// === ALTERANDO === \\
 
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import Nav from "../Nav/Nav";
 import "./EventConfirmation.css";
+import HomeBtn from "../Buttons/HomeBtn";
 
 const EventConfirmation = () => {
-  const navigate = useNavigate();
-  const [count, setCount] = useState(4);
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCount((prevCount) => prevCount - 1);
-    }, 1000);
-
-    return () => clearInterval(intervalId);
-  }, []);
-
-  useEffect(() => {
-    if (count === 0) {
-      navigate("/home");
-    }
-  }, [count, navigate]);
-
   return (
     <>
       <header>
@@ -72,8 +54,11 @@ const EventConfirmation = () => {
 
       <main>
         <div className="confirmation">
-          <h3>Evento Criado com Sucesso!</h3>
-          <p>Você vai ser redirecionado para a home em {count} segundos...</p>
+          <h3>
+            Você estava Presente no local e hora do Evento! Verifique seu e-mail
+            para ter acesso ao seu Certificado!
+          </h3>
+          <HomeBtn />
         </div>
       </main>
     </>

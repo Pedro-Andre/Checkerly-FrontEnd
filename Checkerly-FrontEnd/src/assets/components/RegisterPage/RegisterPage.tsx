@@ -1,8 +1,8 @@
-import "./RegistroPage.css";
+import "./RegisterPage.css";
 import LoginBtn2 from "../Buttons/LoginBtn2";
 import { Link } from "react-router-dom";
 
-function RegistroPage() {
+function RegisterPage() {
   return (
     <>
       <div className="container">
@@ -35,4 +35,4 @@ function RegistroPage() {
   );
 }
 
-export default RegistroPage;
+export default RegisterPage;

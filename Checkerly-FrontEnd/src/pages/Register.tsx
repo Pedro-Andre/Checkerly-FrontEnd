@@ -1,8 +1,8 @@
 import Footer from "../assets/components/Footer/Footer";
 import Nav from "../assets/components/Nav/Nav";
-import RegistroPage from "../assets/components/RegistroPage/RegistroPage";
+import RegisterPage from "../assets/components/RegisterPage/RegisterPage";
 
-function Registro() {
+function Register() {
   return (
     <>
       <header>
@@ -11,7 +11,7 @@ function Registro() {
 
       <main>
         <section className="registro-section">
-          <RegistroPage />
+          <RegisterPage />
         </section>
 
         <footer>
@@ -22,4 +22,4 @@ function Registro() {
   );
 }
 
-export default Registro;
+export default Register;

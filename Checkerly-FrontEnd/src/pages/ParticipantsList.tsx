@@ -1,8 +1,8 @@
 import Footer from "../assets/components/Footer/Footer";
 import Nav from "../assets/components/Nav/Nav";
-import ListaPage from "../assets/components/ListaPage/ListaPage";
+import ListPage from "../assets/components/ListPage/ListPage";
 
-function ListaParticipantes() {
+function ParticipantsList() {
   return (
     <>
       <header>
@@ -11,7 +11,7 @@ function ListaParticipantes() {
 
       <main>
         <section className="list-container">
-          <ListaPage />
+          <ListPage />
         </section>
 
         <footer>
@@ -22,4 +22,4 @@ function ListaParticipantes() {
   );
 }
 
-export default ListaParticipantes;
+export default ParticipantsList;
