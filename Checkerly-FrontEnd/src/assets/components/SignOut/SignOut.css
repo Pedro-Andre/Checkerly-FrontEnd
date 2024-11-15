@@ -1,0 +1,48 @@
+.sign-out {
+  position: relative;
+}
+
+a > .user-icon-container {
+  width: 6rem;
+  height: 6rem;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  transition: all 0.2s linear;
+  background: var(--clr-grad-orange);
+  border-radius: 1rem;
+  z-index: 2;
+  padding-top: 0.2rem;
+}
+
+a > .user-icon-container::before {
+  content: "";
+  position: absolute;
+  inset: 0.35rem 0.3rem;
+  border-radius: 1rem;
+  z-index: -1;
+  transition: all 0.2 linear;
+  background: var(--clr-black);
+  opacity: 1;
+}
+
+a > .user-icon-container:hover::before {
+  transition: all 0.2s linear;
+  opacity: 0.5;
+  background: transparent;
+}
+
+.sign-out-dropdown {
+  position: absolute;
+  right: -3rem;
+  border: 0.1rem solid var(--clr-black-low-op);
+  padding: 1rem;
+  height: 20rem;
+  background-color: var(--clr-black-low-op);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2.5rem 2rem var(--clr-black-shadow);
+  z-index: 10;
+}

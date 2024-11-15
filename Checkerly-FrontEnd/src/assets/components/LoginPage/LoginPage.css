@@ -5,12 +5,22 @@
   font-size: 2rem;
   transition: all 0.3s;
   cursor: pointer;
-  margin-top: 4.5rem;
+  margin-top: 1rem;
 }
 
 .nova-senha:hover {
   color: var(--clr-white);
   text-decoration: underline;
+}
+
+.nova-senha span {
+  color: var(--clr-primary);
+  background-image: var(--clr-grad-orange);
+  background-clip: text;
+  font-weight: 500;
+  color: transparent;
+  animation: gradient 2s linear infinite alternate;
+  -webkit-background-clip: text;
 }
 
 #login-form {
@@ -19,11 +29,11 @@
 
 .error-message {
   text-align: center;
-  bottom: 15rem;
+  top: 0rem;
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: var(--clr-primary);
   font-weight: 500;
 }
