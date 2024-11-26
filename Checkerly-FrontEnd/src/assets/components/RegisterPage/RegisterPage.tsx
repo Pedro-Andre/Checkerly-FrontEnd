@@ -1,5 +1,5 @@
 import "./RegisterPage.css";
-import LoginBtn2 from "../Buttons/LoginBtn2";
+import CtaButton from "../global/CtaButton";
 import { Link } from "react-router-dom";
 
 function RegisterPage() {
@@ -29,7 +29,7 @@ function RegisterPage() {
           </Link>
         </div>
 
-        <LoginBtn2 />
+        <CtaButton text="Já tenho uma conta" to="/login" />
       </div>
     </>
   );

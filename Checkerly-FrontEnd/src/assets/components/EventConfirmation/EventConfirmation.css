@@ -6,15 +6,27 @@
 .confirmation h3 {
   text-align: center;
   margin-inline: auto;
-  font-size: clamp(1.5rem, 2vw + 0.5rem, 4rem);
+  font-size: clamp(1.75rem, 3vw + 0.5rem, 4.5rem);
   font-weight: 400;
-  width: 100%;
-  max-width: 90rem;
+  width: 80%;
+  color: var(--clr-white);
 }
 
 .confirmation p {
+  margin-inline: auto;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 2vw + 0.5rem, 3.5rem);
+  border: 0.1rem solid var(--clr-primary);
+  border-radius: 1rem;
+  padding: 1rem;
   font-weight: 400;
   margin-top: 3rem;
+  width: 80%;
+  color: var(--clr-white);
+}
+
+.confirmation span {
+  color: var(--clr-primary);
+  text-shadow: 0 0 1rem;
+  font-weight: 600;
 }

@@ -1,6 +1,6 @@
 import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
-import HomeBtn from "../Buttons/HomeBtn";
+import CtaButton from "../global/CtaButton";
 
 function ErrorLocation() {
   return (
@@ -9,7 +9,7 @@ function ErrorLocation() {
         <Nav />
       </header>
 
-      <main>
+      <main className="validate-container">
         <section>
           <div className="text-container">
             <p
@@ -25,7 +25,7 @@ function ErrorLocation() {
               acesso a localização ou então não estava presente na hora e local
               do evento.
             </p>
-            <HomeBtn />
+            <CtaButton text="Voltar para Home" to="/home" />
           </div>
         </section>
 

@@ -43,3 +43,11 @@
   font-size: 2rem;
   padding-inline-start: 2rem;
 }
+
+.container h2 {
+  font-weight: 500;
+}
+
+.validate-container {
+  padding-inline: 1.6rem;
+}

@@ -1,8 +1,7 @@
-import QrdCodeBtn from "../assets/components/Buttons/QrCodeBtn";
-import SeeEventsBtn from "../assets/components/Buttons/SeeEventsBtn";
 import EventImg from "../assets/components/imgs/EventImg";
 import Nav from "../assets/components/Nav/Nav";
 import "../assets/components/PagesCss/Registro.css";
+import CtaButton from "../assets/components/global/CtaButton";
 
 function EventCreated() {
   return (
@@ -15,8 +14,8 @@ function EventCreated() {
         <h1>Evento criado com sucesso!</h1>
         <div className="event-img-container">
           <EventImg />
-          <QrdCodeBtn />
-          <SeeEventsBtn />
+          <CtaButton text="Criar Qr-Code" to="/evento-criado/qr-code" />
+          <CtaButton text="Ver meus eventos" to="/perfil" />
         </div>
       </section>
     </>

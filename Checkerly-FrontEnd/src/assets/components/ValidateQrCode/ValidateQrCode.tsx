@@ -1,36 +1,51 @@
 import { useState } from "react";
-import axios from "axios";
 import Nav from "../Nav/Nav";
+import { useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import "../OrganizerEvent/OrganizerEvent.css";
-import CreateEventBtn from "../Buttons/CreateEventBtn2";
+import CtaButton from "../global/CtaButton";
+import SvgContainer from "../global/SvgContainer";
 
 const ValidateQrCode = () => {
-  const [name, setName] = useState("");
-  const [eventId, setEventId] = useState("");
-  const [pdfPath, setPdfPath] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [errorMessage, setErrorMessage] = useState<string>("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const emailDTO = {
+    const data = {
       name,
-      id: eventId,
-      pdfPath,
       email,
     };
+    console.log(data);
 
     try {
-      const response = await axios.post(
-        "http://localhost:8080/auth/validate/qr",
-        emailDTO
+      const response = await fetch("http://localhost:8080/auth/validate/qr", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        navigate("/evento-criado/token=:token");
+      }
+
+      if (!response.ok) {
+        navigate("/evento-criado/erro-localizacao");
+      }
+    } catch (err) {
+      setErrorMessage(
+        "Houve um Erro! Verifique se você está com a localização ligada e permitiu o acesso a ela. Depois tente novamente. ."
       );
-      setMessage(response.data); // Mensagem de sucesso
-    } catch (error) {
-      setMessage("Erro ao enviar o certificado."); // Mensagem de erro
     }
+
+    // reset inputs value
+    setEmail("");
+    setName("");
   };
 
   return (
@@ -39,9 +54,12 @@ const ValidateQrCode = () => {
         <Nav />
       </header>
 
-      <main>
+      <main className="validate-container">
         <div className="container">
-          <h2 className="container-title">Validar QR Code</h2>
+          <h2 className="container-title">
+            Preencha os campos para receber seu certificado
+          </h2>
+          <SvgContainer width="100%" height="27rem" className="svg-container" />
           <form onSubmit={handleSubmit}>
             <div className="inputs">
               <label htmlFor="qr-input-name">
@@ -51,26 +69,6 @@ const ValidateQrCode = () => {
                   placeholder="Nome do Usuário"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  required
-                />
-              </label>
-              <label htmlFor="qr-input-id">
-                <input
-                  type="text"
-                  id="qr-input-id"
-                  placeholder="ID do Evento"
-                  value={eventId}
-                  onChange={(e) => setEventId(e.target.value)}
-                  required
-                />
-              </label>
-              <label htmlFor="qr-code-pdf">
-                <input
-                  type="text"
-                  id="qr-code-pdf"
-                  placeholder="Caminho do PDF"
-                  value={pdfPath}
-                  onChange={(e) => setPdfPath(e.target.value)}
                   required
                 />
               </label>
@@ -85,9 +83,9 @@ const ValidateQrCode = () => {
                 />
               </label>
             </div>
-            <CreateEventBtn />
+            <CtaButton text="Enviar" type="submit" />
+            {errorMessage && <p className="error-message">{errorMessage}</p>}
           </form>
-          {message && <p>{message}</p>}
         </div>
 
         <footer>

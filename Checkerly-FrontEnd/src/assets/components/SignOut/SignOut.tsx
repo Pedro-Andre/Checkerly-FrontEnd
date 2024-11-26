@@ -31,7 +31,6 @@
 
 // export default SignOut;
 
-// gpt
 import LogoutBtn from "../Buttons/LogoutBtn";
 import UserIcon from "../imgs/UserIcon";
 import "./SignOut.css";

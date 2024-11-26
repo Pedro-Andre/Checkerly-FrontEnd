@@ -47,16 +47,16 @@ function App() {
             path="/criar-evento/evento-criado"
             element={<Perfil />}
           ></Route>
-          <Route path="/erro-localizacao" element={<ErrorLocation />}></Route>
+          <Route
+            path="/evento-criado/erro-localizacao"
+            element={<ErrorLocation />}
+          ></Route>
           <Route path="/evento-criado/qr-code" element={<QrCodePage />}></Route>
           <Route
-            path="/criar-evento/evento-criado/token=:token"
+            path="/evento-criado/token=:token"
             element={<EventConfirmation />}
           />
-          <Route
-            path="/criar-evento/evento-criado/teste"
-            element={<ValidateQrCode />}
-          />
+          <Route path="/evento-criado/validacao" element={<ValidateQrCode />} />
           <Route path="*" element={<Home />}></Route>
         </Routes>
       </BrowserRouter>

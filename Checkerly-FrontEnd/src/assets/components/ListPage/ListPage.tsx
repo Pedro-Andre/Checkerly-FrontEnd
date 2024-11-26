@@ -1,6 +1,6 @@
 import EventQrCodeBtn from "../Buttons/EventQrCodeBtn";
-// import ParticipantsBtn from "../Buttons/ParticipantsBtn";
 import "./ListPage.css";
+import SvgContainer from "../global/SvgContainer";
 
 function ListPage() {
   return (
@@ -37,34 +37,7 @@ function ListPage() {
             />
           </label>
         </div>
-        <svg
-          width="100%"
-          xmlns="http://www.w3.org/2000/svg"
-          className="svg-container svg-list"
-        >
-          <rect
-            rx="20"
-            width="100%"
-            x="-0"
-            y="0"
-            stroke="url(#paint0_linear_227_259)"
-            strokeWidth="2"
-            className="svg-list"
-          />
-          <defs>
-            <linearGradient
-              id="paint0_linear_227_259"
-              x1="1.61353"
-              y1="1.00342"
-              x2="1297.61"
-              y2="416.915"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="#009D53" />
-              <stop offset="1" stopColor="#F07F3D" />
-            </linearGradient>
-          </defs>
-        </svg>
+        <SvgContainer width="100%" height="70rem" className="svg-container" />
         <div className="scroll-container-wrapper">
           <div className="scroll-container">
             <table>
