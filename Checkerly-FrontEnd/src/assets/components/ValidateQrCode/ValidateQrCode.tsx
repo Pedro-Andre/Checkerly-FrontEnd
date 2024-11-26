@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Nav from "../Nav/Nav";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
+import Geolocation from "../Geolocation/Geolocation";
 import "../OrganizerEvent/OrganizerEvent.css";
 import CtaButton from "../global/CtaButton";
 import SvgContainer from "../global/SvgContainer";
@@ -11,6 +12,22 @@ const ValidateQrCode = () => {
   const [email, setEmail] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string>("");
   const navigate = useNavigate();
+
+  // geolcation
+  const [userCoords, setUserCoords] = useState<{
+    latitude: number;
+    longitude: number;
+  } | null>(null);
+
+  userCoords;
+  const handleLocationReceived = (latitude: number, longitude: number) => {
+    setUserCoords({ latitude, longitude });
+    localStorage.setItem("userCoords", JSON.stringify({ latitude, longitude }));
+  };
+
+  useEffect(() => {
+    localStorage.removeItem("userCoords");
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -55,6 +72,7 @@ const ValidateQrCode = () => {
       </header>
 
       <main className="validate-container">
+        <Geolocation localReceived={handleLocationReceived} />
         <div className="container">
           <h2 className="container-title">
             Preencha os campos para receber seu certificado
